@@ -8,7 +8,7 @@ http.createServer(function (req, res) {
     const pathname = url.parse(req.url).pathname;
     console.log(pathname);
     res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.write(pathname);
+    res.write('TEXT');
     res.end();
   }).listen(8080)
 
