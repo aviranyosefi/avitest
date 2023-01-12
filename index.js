@@ -9,7 +9,7 @@ http.createServer(function (req, res) {
     //const host =request.headers.host
     //console.log(pathname);
     res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.write('text : ' +pathname );
+    res.write('text : ' + JSON.stringify(pathname ));
     res.end();
   }).listen(8080)
 
