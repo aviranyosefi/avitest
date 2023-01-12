@@ -3,7 +3,7 @@ const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {
-    var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+    var fullUrl = req.protocol + '$$' + req.get('host') +'$$'+ req.originalUrl;
   res.send('Hello World!' + fullUrl)
 })
 
@@ -13,14 +13,14 @@ app.listen(port, () => {
 
 
 
-
+/*
 const fetch = require('node-fetch')
 const http = require('http')
 var url = require('url');
 var request = require('request');
 
 
-/*
+
 http.createServer(function (req, res) {
     const pathname =req.pipe(request.post(dbServer)).pipe(res)
     console.log(pathname);
