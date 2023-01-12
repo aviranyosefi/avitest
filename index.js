@@ -6,10 +6,11 @@ var url = require('url');
 
 http.createServer(function (req, res) {
     const pathname = url.parse(req.url ,true)
-    //const host =request.headers.host
+    //const host =req.headers.host
+      var origin = req.get('origin');
     //console.log(pathname);
     res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.write('text : ' + JSON.stringify(pathname ));
+    res.write(  'text : ' + JSON.stringify(origin ));
     res.end();
   }).listen(8080)
 
