@@ -5,11 +5,11 @@ var url = require('url');
 
 
 http.createServer(function (req, res) {
-    const pathname = url.parse(req.url).pathname;
-    const host =request.headers.host
+    const pathname = req.url;
+    //const host =request.headers.host
     console.log(pathname);
     res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.write(host);
+    res.write(pathname);
     res.end();
   }).listen(8080)
 
