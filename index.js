@@ -1,18 +1,17 @@
+const express = require('express')
+const app = express()
+const port = 3000
 
-const fetch = require('node-fetch')
-const http = require('http')
-var url = require('url');
+app.get('/', (req, res) => {
+    var host = req.get('host');
+  res.send('Hello World!' + host)
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
 
 
-http.createServer(function (req, res) {
-    const pathname = url.parse(req.url ,true)
-    const host =req.headers.host
-      
-    //console.log(pathname);
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.write(  'text : ' + JSON.stringify(host ));
-    res.end();
-  }).listen(8080)
 
 /*
 fetch('https://boi.org.il/PublicApi/GetExchangeRates')
