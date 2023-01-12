@@ -3,8 +3,8 @@ const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {
-    var host = req.get('host');
-  res.send('Hello World!' + host)
+    var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+  res.send('Hello World!' + fullUrl)
 })
 
 app.listen(port, () => {
@@ -13,7 +13,25 @@ app.listen(port, () => {
 
 
 
+
+const fetch = require('node-fetch')
+const http = require('http')
+var url = require('url');
+var request = require('request');
+
+
 /*
+http.createServer(function (req, res) {
+    const pathname =req.pipe(request.post(dbServer)).pipe(res)
+    console.log(pathname);
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.write(pathname);
+    res.end();
+  }).listen(8080)
+
+
+
+
 fetch('https://boi.org.il/PublicApi/GetExchangeRates')
     .then(res => res.text())
     .then(text => http.createServer(function (req, res) {
