@@ -8,7 +8,8 @@ app.get('/', (req, res) => {
     //var host1 = req.get('host');
     //var fullUrl = req.originalUrl;
     var host =req.headers.host
-  res.send('host: ' + host)
+    console.log(req.hostname)
+  res.send('host: ')
 })
 
 app.listen(port, () => {
