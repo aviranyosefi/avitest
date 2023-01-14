@@ -3,11 +3,12 @@ const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {
-    var origin = req.get('origin');
-    var host = req.headers.host
-    var host1 = req.get('host');
-    var fullUrl = req.originalUrl;
-  res.send('Hello World! ' + fullUrl + ' origin: ' +origin + ' host: '+host + ' host1: ' +host1)
+    //var origin = req.get('origin');
+    //var host = req.headers.host
+    //var host1 = req.get('host');
+    //var fullUrl = req.originalUrl;
+    var host =req.headers.host
+  res.send('host: ' + host)
 })
 
 app.listen(port, () => {
