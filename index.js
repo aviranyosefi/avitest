@@ -3,14 +3,8 @@ const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {
-    //var origin = req.get('origin');
-    //var host = req.headers.host
-    //var host1 = req.get('host');
-    //var fullUrl = req.originalUrl;
-    var ip = req.socket.remoteAddress
-    //var host =req.headers.host
-    //console.log(req.hostname)
-  res.send('ip: ' +ip)
+    const ipAddress = req.socket.remoteAddress;
+    res.send(ipAddress);
 })
 
 app.listen(port, () => {
