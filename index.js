@@ -7,9 +7,10 @@ app.get('/', (req, res) => {
     //var host = req.headers.host
     //var host1 = req.get('host');
     //var fullUrl = req.originalUrl;
-    var host =req.headers.host
-    console.log(req.hostname)
-  res.send('host: ')
+    var ip = req.socket.remoteAddress
+    //var host =req.headers.host
+    //console.log(req.hostname)
+  res.send('ip: ' +ip)
 })
 
 app.listen(port, () => {
