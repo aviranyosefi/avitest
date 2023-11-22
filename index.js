@@ -5,8 +5,10 @@ const port = 3000
 app.get('/', (req, res) => {
     //const ipAddress =req.headers['x-forwarded-for'] 
     //res.send(ipAddress);
-    const userAgent = req.headers['user-agent'];
-res.send(`Hello, this is your Express server! Your user agent is: ${userAgent}`);
+    //const userAgent = req.headers['user-agent'];
+//res.send(`Hello, this is your Express server! Your user agent is: ${userAgent}`);
+     const requestURL = req.url;
+  res.send(`Hello, this is your Express server! You accessed the URL: ${requestURL}`);
 })
 
 app.listen(port, () => {
